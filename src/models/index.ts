@@ -8,6 +8,7 @@ export * from './ConversationType';
 export * from './CursorPageContactRead';
 export * from './CursorPageConversationRead';
 export * from './HTTPValidationError';
+export * from './HealthResponse';
 export * from './LastMessageRead';
 export * from './LocationInner';
 export * from './LoginRequest';

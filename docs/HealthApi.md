@@ -10,7 +10,7 @@ All URIs are relative to *http://localhost*
 
 ## healthHealthGet
 
-> any healthHealthGet()
+> HealthResponse healthHealthGet()
 
 Health
 
@@ -45,7 +45,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-**any**
+[**HealthResponse**](HealthResponse.md)
 
 ### Authorization
 

@@ -13,6 +13,7 @@ docs/CursorPageContactRead.md
 docs/CursorPageConversationRead.md
 docs/HTTPValidationError.md
 docs/HealthApi.md
+docs/HealthResponse.md
 docs/LastMessageRead.md
 docs/LocationInner.md
 docs/LoginRequest.md
@@ -47,6 +48,7 @@ src/models/ConversationType.ts
 src/models/CursorPageContactRead.ts
 src/models/CursorPageConversationRead.ts
 src/models/HTTPValidationError.ts
+src/models/HealthResponse.ts
 src/models/LastMessageRead.ts
 src/models/LocationInner.ts
 src/models/LoginRequest.ts

@@ -1,55 +1,56 @@
-# @bianlat/api-client@0.0.1
+## @bianlat/api-client@0.0.4
 
-A TypeScript SDK client for the localhost API.
+This generator creates TypeScript/JavaScript client that utilizes [axios](https://github.com/axios/axios). The generated Node module can be used in the following environments:
 
-## Usage
+Environment
+* Node.js
+* Webpack
+* Browserify
 
-First, install the SDK from npm.
+Language level
+* ES5 - you must have a Promises/A+ library installed
+* ES6
 
-```bash
-npm install @bianlat/api-client --save
+Module system
+* CommonJS
+* ES6 module system
+
+It can be used in both TypeScript and JavaScript. In TypeScript, the definition will be automatically resolved via `package.json`. ([Reference](https://www.typescriptlang.org/docs/handbook/declaration-files/consumption.html))
+
+### Building
+
+To build and compile the typescript sources to javascript use:
+```
+npm install
+npm run build
 ```
 
-Next, try it out.
+### Publishing
 
+First build the package then run `npm publish`
 
-```ts
-import {
-  Configuration,
-  AuthApi,
-} from '@bianlat/api-client';
-import type { LoginApiV1AuthLoginPostRequest } from '@bianlat/api-client';
+### Consuming
 
-async function example() {
-  console.log("🚀 Testing @bianlat/api-client SDK...");
-  const api = new AuthApi();
+navigate to the folder of your consuming project and run one of the following commands.
 
-  const body = {
-    // LoginRequest
-    loginRequest: ...,
-  } satisfies LoginApiV1AuthLoginPostRequest;
+_published:_
 
-  try {
-    const data = await api.loginApiV1AuthLoginPost(body);
-    console.log(data);
-  } catch (error) {
-    console.error(error);
-  }
-}
-
-// Run the test
-example().catch(console.error);
+```
+npm install @bianlat/api-client@0.0.4 --save
 ```
 
+_unPublished (not recommended):_
 
-## Documentation
+```
+npm install PATH_TO_GENERATED_PACKAGE --save
+```
 
-### API Endpoints
+### Documentation for API Endpoints
 
 All URIs are relative to *http://localhost*
 
-| Class | Method | HTTP request | Description
-| ----- | ------ | ------------ | -------------
+Class | Method | HTTP request | Description
+------------ | ------------- | ------------- | -------------
 *AuthApi* | [**loginApiV1AuthLoginPost**](docs/AuthApi.md#loginapiv1authloginpost) | **POST** /api/v1/auth/login | Login
 *AuthApi* | [**logoutApiV1AuthLogoutPost**](docs/AuthApi.md#logoutapiv1authlogoutpost) | **POST** /api/v1/auth/logout | Logout
 *AuthApi* | [**refreshApiV1AuthRefreshPost**](docs/AuthApi.md#refreshapiv1authrefreshpost) | **POST** /api/v1/auth/refresh | Refresh
@@ -70,89 +71,42 @@ All URIs are relative to *http://localhost*
 *UsersApi* | [**updateMeApiV1UsersMePatch**](docs/UsersApi.md#updatemeapiv1usersmepatch) | **PATCH** /api/v1/users/me | Update Me
 
 
-### Models
+### Documentation For Models
 
-- [ContactCreate](docs/ContactCreate.md)
-- [ContactRead](docs/ContactRead.md)
-- [ConversationCreate](docs/ConversationCreate.md)
-- [ConversationRead](docs/ConversationRead.md)
-- [ConversationType](docs/ConversationType.md)
-- [CursorPageContactRead](docs/CursorPageContactRead.md)
-- [CursorPageConversationRead](docs/CursorPageConversationRead.md)
-- [HTTPValidationError](docs/HTTPValidationError.md)
-- [HealthResponse](docs/HealthResponse.md)
-- [LastMessageRead](docs/LastMessageRead.md)
-- [LocationInner](docs/LocationInner.md)
-- [LoginRequest](docs/LoginRequest.md)
-- [MessageRead](docs/MessageRead.md)
-- [MessageStatus](docs/MessageStatus.md)
-- [MessageType](docs/MessageType.md)
-- [PaginatedMessages](docs/PaginatedMessages.md)
-- [ParticipantRead](docs/ParticipantRead.md)
-- [ParticipantRole](docs/ParticipantRole.md)
-- [RefreshRequest](docs/RefreshRequest.md)
-- [SendMessageRequest](docs/SendMessageRequest.md)
-- [TokenResponse](docs/TokenResponse.md)
-- [UserRead](docs/UserRead.md)
-- [UserUpdate](docs/UserUpdate.md)
-- [ValidationError](docs/ValidationError.md)
-- [VerifyRequest](docs/VerifyRequest.md)
+ - [ContactCreate](docs/ContactCreate.md)
+ - [ContactRead](docs/ContactRead.md)
+ - [ConversationCreate](docs/ConversationCreate.md)
+ - [ConversationRead](docs/ConversationRead.md)
+ - [ConversationType](docs/ConversationType.md)
+ - [CursorPageContactRead](docs/CursorPageContactRead.md)
+ - [CursorPageConversationRead](docs/CursorPageConversationRead.md)
+ - [HTTPValidationError](docs/HTTPValidationError.md)
+ - [HealthResponse](docs/HealthResponse.md)
+ - [LastMessageRead](docs/LastMessageRead.md)
+ - [LocationInner](docs/LocationInner.md)
+ - [LoginRequest](docs/LoginRequest.md)
+ - [MessageRead](docs/MessageRead.md)
+ - [MessageStatus](docs/MessageStatus.md)
+ - [MessageType](docs/MessageType.md)
+ - [PaginatedMessages](docs/PaginatedMessages.md)
+ - [ParticipantRead](docs/ParticipantRead.md)
+ - [ParticipantRole](docs/ParticipantRole.md)
+ - [RefreshRequest](docs/RefreshRequest.md)
+ - [SendMessageRequest](docs/SendMessageRequest.md)
+ - [TokenResponse](docs/TokenResponse.md)
+ - [UserRead](docs/UserRead.md)
+ - [UserUpdate](docs/UserUpdate.md)
+ - [ValidationError](docs/ValidationError.md)
+ - [VerifyRequest](docs/VerifyRequest.md)
 
-### Authorization
+
+<a id="documentation-for-authorization"></a>
+## Documentation For Authorization
 
 
 Authentication schemes defined for the API:
 <a id="HTTPBearer"></a>
-#### HTTPBearer
+### HTTPBearer
 
+- **Type**: Bearer authentication
 
-- **Type**: HTTP Bearer Token authentication
-
-## About
-
-This TypeScript SDK client supports the [Fetch API](https://fetch.spec.whatwg.org/)
-and is automatically generated by the
-[OpenAPI Generator](https://openapi-generator.tech) project:
-
-- API version: `0.0.2`
-- Package version: `0.0.1`
-- Generator version: `7.20.0`
-- Build package: `org.openapitools.codegen.languages.TypeScriptFetchClientCodegen`
-
-The generated npm module supports the following:
-
-- Environments
-  * Node.js
-  * Webpack
-  * Browserify
-- Language levels
-  * ES5 - you must have a Promises/A+ library installed
-  * ES6
-- Module systems
-  * CommonJS
-  * ES6 module system
-
-
-## Development
-
-### Building
-
-To build the TypeScript source code, you need to have Node.js and npm installed.
-After cloning the repository, navigate to the project directory and run:
-
-```bash
-npm install
-npm run build
-```
-
-### Publishing
-
-Once you've built the package, you can publish it to npm:
-
-```bash
-npm publish
-```
-
-## License
-
-[]()

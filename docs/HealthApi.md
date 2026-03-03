@@ -2,50 +2,35 @@
 
 All URIs are relative to *http://localhost*
 
-| Method | HTTP request | Description |
+|Method | HTTP request | Description|
 |------------- | ------------- | -------------|
-| [**healthHealthGet**](HealthApi.md#healthhealthget) | **GET** /health | Health |
+|[**healthHealthGet**](#healthhealthget) | **GET** /health | Health|
 
-
-
-## healthHealthGet
-
+# **healthHealthGet**
 > HealthResponse healthHealthGet()
 
-Health
 
 ### Example
 
-```ts
+```typescript
 import {
-  Configuration,
-  HealthApi,
+    HealthApi,
+    Configuration
 } from '@bianlat/api-client';
-import type { HealthHealthGetRequest } from '@bianlat/api-client';
 
-async function example() {
-  console.log("🚀 Testing @bianlat/api-client SDK...");
-  const api = new HealthApi();
+const configuration = new Configuration();
+const apiInstance = new HealthApi(configuration);
 
-  try {
-    const data = await api.healthHealthGet();
-    console.log(data);
-  } catch (error) {
-    console.error(error);
-  }
-}
-
-// Run the test
-example().catch(console.error);
+const { status, data } = await apiInstance.healthHealthGet();
 ```
 
 ### Parameters
+This endpoint does not have any parameters.
 
-This endpoint does not need any parameter.
 
 ### Return type
 
-[**HealthResponse**](HealthResponse.md)
+**HealthResponse**
 
 ### Authorization
 
@@ -53,14 +38,14 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: `application/json`
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
 
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Successful Response |  -  |
+|**200** | Successful Response |  -  |
 
-[[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

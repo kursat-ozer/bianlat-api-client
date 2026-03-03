@@ -1,44 +1,30 @@
-
 # CursorPageContactRead
 
 
 ## Properties
 
-Name | Type
------------- | -------------
-`items` | [Array&lt;ContactRead&gt;](ContactRead.md)
-`total` | number
-`currentPage` | string
-`currentPageBackwards` | string
-`previousPage` | string
-`nextPage` | string
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**items** | [**Array&lt;ContactRead&gt;**](ContactRead.md) |  | [default to undefined]
+**total** | **number** |  | [default to undefined]
+**current_page** | **string** |  | [optional] [default to undefined]
+**current_page_backwards** | **string** |  | [optional] [default to undefined]
+**previous_page** | **string** |  | [optional] [default to undefined]
+**next_page** | **string** |  | [optional] [default to undefined]
 
 ## Example
 
 ```typescript
-import type { CursorPageContactRead } from '@bianlat/api-client'
+import { CursorPageContactRead } from '@bianlat/api-client';
 
-// TODO: Update the object below with actual values
-const example = {
-  "items": null,
-  "total": null,
-  "currentPage": null,
-  "currentPageBackwards": null,
-  "previousPage": null,
-  "nextPage": null,
-} satisfies CursorPageContactRead
-
-console.log(example)
-
-// Convert the instance to a JSON string
-const exampleJSON: string = JSON.stringify(example)
-console.log(exampleJSON)
-
-// Parse the JSON string back to an object
-const exampleParsed = JSON.parse(exampleJSON) as CursorPageContactRead
-console.log(exampleParsed)
+const instance: CursorPageContactRead = {
+    items,
+    total,
+    current_page,
+    current_page_backwards,
+    previous_page,
+    next_page,
+};
 ```
 
-[[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
-
-
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

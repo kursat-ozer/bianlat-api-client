@@ -2,67 +2,48 @@
 
 All URIs are relative to *http://localhost*
 
-| Method | HTTP request | Description |
+|Method | HTTP request | Description|
 |------------- | ------------- | -------------|
-| [**addContactApiV1UsersContactsPost**](UsersApi.md#addcontactapiv1userscontactspost) | **POST** /api/v1/users/contacts | Add Contact |
-| [**getContactApiV1UsersContactsContactUserIdGet**](UsersApi.md#getcontactapiv1userscontactscontactuseridget) | **GET** /api/v1/users/contacts/{contact_user_id} | Get Contact |
-| [**getMeApiV1UsersMeGet**](UsersApi.md#getmeapiv1usersmeget) | **GET** /api/v1/users/me | Get Me |
-| [**listContactsApiV1UsersContactsGet**](UsersApi.md#listcontactsapiv1userscontactsget) | **GET** /api/v1/users/contacts | List Contacts |
-| [**removeContactApiV1UsersContactsContactUserIdDelete**](UsersApi.md#removecontactapiv1userscontactscontactuseriddelete) | **DELETE** /api/v1/users/contacts/{contact_user_id} | Remove Contact |
-| [**updateMeApiV1UsersMePatch**](UsersApi.md#updatemeapiv1usersmepatch) | **PATCH** /api/v1/users/me | Update Me |
+|[**addContactApiV1UsersContactsPost**](#addcontactapiv1userscontactspost) | **POST** /api/v1/users/contacts | Add Contact|
+|[**getContactApiV1UsersContactsContactUserIdGet**](#getcontactapiv1userscontactscontactuseridget) | **GET** /api/v1/users/contacts/{contact_user_id} | Get Contact|
+|[**getMeApiV1UsersMeGet**](#getmeapiv1usersmeget) | **GET** /api/v1/users/me | Get Me|
+|[**listContactsApiV1UsersContactsGet**](#listcontactsapiv1userscontactsget) | **GET** /api/v1/users/contacts | List Contacts|
+|[**removeContactApiV1UsersContactsContactUserIdDelete**](#removecontactapiv1userscontactscontactuseriddelete) | **DELETE** /api/v1/users/contacts/{contact_user_id} | Remove Contact|
+|[**updateMeApiV1UsersMePatch**](#updatemeapiv1usersmepatch) | **PATCH** /api/v1/users/me | Update Me|
 
-
-
-## addContactApiV1UsersContactsPost
-
+# **addContactApiV1UsersContactsPost**
 > ContactRead addContactApiV1UsersContactsPost(contactCreate)
 
-Add Contact
 
 ### Example
 
-```ts
+```typescript
 import {
-  Configuration,
-  UsersApi,
+    UsersApi,
+    Configuration,
+    ContactCreate
 } from '@bianlat/api-client';
-import type { AddContactApiV1UsersContactsPostRequest } from '@bianlat/api-client';
 
-async function example() {
-  console.log("🚀 Testing @bianlat/api-client SDK...");
-  const config = new Configuration({ 
-    // Configure HTTP bearer authorization: HTTPBearer
-    accessToken: "YOUR BEARER TOKEN",
-  });
-  const api = new UsersApi(config);
+const configuration = new Configuration();
+const apiInstance = new UsersApi(configuration);
 
-  const body = {
-    // ContactCreate
-    contactCreate: ...,
-  } satisfies AddContactApiV1UsersContactsPostRequest;
+let contactCreate: ContactCreate; //
 
-  try {
-    const data = await api.addContactApiV1UsersContactsPost(body);
-    console.log(data);
-  } catch (error) {
-    console.error(error);
-  }
-}
-
-// Run the test
-example().catch(console.error);
+const { status, data } = await apiInstance.addContactApiV1UsersContactsPost(
+    contactCreate
+);
 ```
 
 ### Parameters
 
-
-| Name | Type | Description  | Notes |
+|Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **contactCreate** | [ContactCreate](ContactCreate.md) |  | |
+| **contactCreate** | **ContactCreate**|  | |
+
 
 ### Return type
 
-[**ContactRead**](ContactRead.md)
+**ContactRead**
 
 ### Authorization
 
@@ -70,69 +51,50 @@ example().catch(console.error);
 
 ### HTTP request headers
 
-- **Content-Type**: `application/json`
-- **Accept**: `application/json`
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **201** | Successful Response |  -  |
-| **422** | Validation Error |  -  |
+|**201** | Successful Response |  -  |
+|**422** | Validation Error |  -  |
 
-[[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **getContactApiV1UsersContactsContactUserIdGet**
+> ContactRead getContactApiV1UsersContactsContactUserIdGet()
 
-## getContactApiV1UsersContactsContactUserIdGet
-
-> ContactRead getContactApiV1UsersContactsContactUserIdGet(contactUserId)
-
-Get Contact
 
 ### Example
 
-```ts
+```typescript
 import {
-  Configuration,
-  UsersApi,
+    UsersApi,
+    Configuration
 } from '@bianlat/api-client';
-import type { GetContactApiV1UsersContactsContactUserIdGetRequest } from '@bianlat/api-client';
 
-async function example() {
-  console.log("🚀 Testing @bianlat/api-client SDK...");
-  const config = new Configuration({ 
-    // Configure HTTP bearer authorization: HTTPBearer
-    accessToken: "YOUR BEARER TOKEN",
-  });
-  const api = new UsersApi(config);
+const configuration = new Configuration();
+const apiInstance = new UsersApi(configuration);
 
-  const body = {
-    // string
-    contactUserId: 38400000-8cf0-11bd-b23e-10b96e4ef00d,
-  } satisfies GetContactApiV1UsersContactsContactUserIdGetRequest;
+let contactUserId: string; // (default to undefined)
 
-  try {
-    const data = await api.getContactApiV1UsersContactsContactUserIdGet(body);
-    console.log(data);
-  } catch (error) {
-    console.error(error);
-  }
-}
-
-// Run the test
-example().catch(console.error);
+const { status, data } = await apiInstance.getContactApiV1UsersContactsContactUserIdGet(
+    contactUserId
+);
 ```
 
 ### Parameters
 
-
-| Name | Type | Description  | Notes |
+|Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **contactUserId** | `string` |  | [Defaults to `undefined`] |
+| **contactUserId** | [**string**] |  | defaults to undefined|
+
 
 ### Return type
 
-[**ContactRead**](ContactRead.md)
+**ContactRead**
 
 ### Authorization
 
@@ -140,61 +102,43 @@ example().catch(console.error);
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: `application/json`
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
 
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Successful Response |  -  |
-| **422** | Validation Error |  -  |
+|**200** | Successful Response |  -  |
+|**422** | Validation Error |  -  |
 
-[[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-
-## getMeApiV1UsersMeGet
-
+# **getMeApiV1UsersMeGet**
 > UserRead getMeApiV1UsersMeGet()
 
-Get Me
 
 ### Example
 
-```ts
+```typescript
 import {
-  Configuration,
-  UsersApi,
+    UsersApi,
+    Configuration
 } from '@bianlat/api-client';
-import type { GetMeApiV1UsersMeGetRequest } from '@bianlat/api-client';
 
-async function example() {
-  console.log("🚀 Testing @bianlat/api-client SDK...");
-  const config = new Configuration({ 
-    // Configure HTTP bearer authorization: HTTPBearer
-    accessToken: "YOUR BEARER TOKEN",
-  });
-  const api = new UsersApi(config);
+const configuration = new Configuration();
+const apiInstance = new UsersApi(configuration);
 
-  try {
-    const data = await api.getMeApiV1UsersMeGet();
-    console.log(data);
-  } catch (error) {
-    console.error(error);
-  }
-}
-
-// Run the test
-example().catch(console.error);
+const { status, data } = await apiInstance.getMeApiV1UsersMeGet();
 ```
 
 ### Parameters
+This endpoint does not have any parameters.
 
-This endpoint does not need any parameter.
 
 ### Return type
 
-[**UserRead**](UserRead.md)
+**UserRead**
 
 ### Authorization
 
@@ -202,74 +146,55 @@ This endpoint does not need any parameter.
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: `application/json`
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
 
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Successful Response |  -  |
+|**200** | Successful Response |  -  |
 
-[[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **listContactsApiV1UsersContactsGet**
+> CursorPageContactRead listContactsApiV1UsersContactsGet()
 
-## listContactsApiV1UsersContactsGet
-
-> CursorPageContactRead listContactsApiV1UsersContactsGet(q, cursor, size)
-
-List Contacts
 
 ### Example
 
-```ts
+```typescript
 import {
-  Configuration,
-  UsersApi,
+    UsersApi,
+    Configuration
 } from '@bianlat/api-client';
-import type { ListContactsApiV1UsersContactsGetRequest } from '@bianlat/api-client';
 
-async function example() {
-  console.log("🚀 Testing @bianlat/api-client SDK...");
-  const config = new Configuration({ 
-    // Configure HTTP bearer authorization: HTTPBearer
-    accessToken: "YOUR BEARER TOKEN",
-  });
-  const api = new UsersApi(config);
+const configuration = new Configuration();
+const apiInstance = new UsersApi(configuration);
 
-  const body = {
-    // string (optional)
-    q: q_example,
-    // string | Cursor for the next page (optional)
-    cursor: cursor_example,
-    // number | Page size (optional)
-    size: 56,
-  } satisfies ListContactsApiV1UsersContactsGetRequest;
+let q: string; // (optional) (default to undefined)
+let cursor: string; //Cursor for the next page (optional) (default to undefined)
+let size: number; //Page size (optional) (default to 50)
 
-  try {
-    const data = await api.listContactsApiV1UsersContactsGet(body);
-    console.log(data);
-  } catch (error) {
-    console.error(error);
-  }
-}
-
-// Run the test
-example().catch(console.error);
+const { status, data } = await apiInstance.listContactsApiV1UsersContactsGet(
+    q,
+    cursor,
+    size
+);
 ```
 
 ### Parameters
 
-
-| Name | Type | Description  | Notes |
+|Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **q** | `string` |  | [Optional] [Defaults to `undefined`] |
-| **cursor** | `string` | Cursor for the next page | [Optional] [Defaults to `undefined`] |
-| **size** | `number` | Page size | [Optional] [Defaults to `50`] |
+| **q** | [**string**] |  | (optional) defaults to undefined|
+| **cursor** | [**string**] | Cursor for the next page | (optional) defaults to undefined|
+| **size** | [**number**] | Page size | (optional) defaults to 50|
+
 
 ### Return type
 
-[**CursorPageContactRead**](CursorPageContactRead.md)
+**CursorPageContactRead**
 
 ### Authorization
 
@@ -277,69 +202,50 @@ example().catch(console.error);
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: `application/json`
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
 
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Successful Response |  -  |
-| **422** | Validation Error |  -  |
+|**200** | Successful Response |  -  |
+|**422** | Validation Error |  -  |
 
-[[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **removeContactApiV1UsersContactsContactUserIdDelete**
+> removeContactApiV1UsersContactsContactUserIdDelete()
 
-## removeContactApiV1UsersContactsContactUserIdDelete
-
-> removeContactApiV1UsersContactsContactUserIdDelete(contactUserId)
-
-Remove Contact
 
 ### Example
 
-```ts
+```typescript
 import {
-  Configuration,
-  UsersApi,
+    UsersApi,
+    Configuration
 } from '@bianlat/api-client';
-import type { RemoveContactApiV1UsersContactsContactUserIdDeleteRequest } from '@bianlat/api-client';
 
-async function example() {
-  console.log("🚀 Testing @bianlat/api-client SDK...");
-  const config = new Configuration({ 
-    // Configure HTTP bearer authorization: HTTPBearer
-    accessToken: "YOUR BEARER TOKEN",
-  });
-  const api = new UsersApi(config);
+const configuration = new Configuration();
+const apiInstance = new UsersApi(configuration);
 
-  const body = {
-    // string
-    contactUserId: 38400000-8cf0-11bd-b23e-10b96e4ef00d,
-  } satisfies RemoveContactApiV1UsersContactsContactUserIdDeleteRequest;
+let contactUserId: string; // (default to undefined)
 
-  try {
-    const data = await api.removeContactApiV1UsersContactsContactUserIdDelete(body);
-    console.log(data);
-  } catch (error) {
-    console.error(error);
-  }
-}
-
-// Run the test
-example().catch(console.error);
+const { status, data } = await apiInstance.removeContactApiV1UsersContactsContactUserIdDelete(
+    contactUserId
+);
 ```
 
 ### Parameters
 
-
-| Name | Type | Description  | Notes |
+|Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **contactUserId** | `string` |  | [Defaults to `undefined`] |
+| **contactUserId** | [**string**] |  | defaults to undefined|
+
 
 ### Return type
 
-`void` (Empty response body)
+void (empty response body)
 
 ### Authorization
 
@@ -347,69 +253,51 @@ example().catch(console.error);
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: `application/json`
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
 
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **204** | Successful Response |  -  |
-| **422** | Validation Error |  -  |
+|**204** | Successful Response |  -  |
+|**422** | Validation Error |  -  |
 
-[[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-
-## updateMeApiV1UsersMePatch
-
+# **updateMeApiV1UsersMePatch**
 > UserRead updateMeApiV1UsersMePatch(userUpdate)
 
-Update Me
 
 ### Example
 
-```ts
+```typescript
 import {
-  Configuration,
-  UsersApi,
+    UsersApi,
+    Configuration,
+    UserUpdate
 } from '@bianlat/api-client';
-import type { UpdateMeApiV1UsersMePatchRequest } from '@bianlat/api-client';
 
-async function example() {
-  console.log("🚀 Testing @bianlat/api-client SDK...");
-  const config = new Configuration({ 
-    // Configure HTTP bearer authorization: HTTPBearer
-    accessToken: "YOUR BEARER TOKEN",
-  });
-  const api = new UsersApi(config);
+const configuration = new Configuration();
+const apiInstance = new UsersApi(configuration);
 
-  const body = {
-    // UserUpdate
-    userUpdate: ...,
-  } satisfies UpdateMeApiV1UsersMePatchRequest;
+let userUpdate: UserUpdate; //
 
-  try {
-    const data = await api.updateMeApiV1UsersMePatch(body);
-    console.log(data);
-  } catch (error) {
-    console.error(error);
-  }
-}
-
-// Run the test
-example().catch(console.error);
+const { status, data } = await apiInstance.updateMeApiV1UsersMePatch(
+    userUpdate
+);
 ```
 
 ### Parameters
 
-
-| Name | Type | Description  | Notes |
+|Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **userUpdate** | [UserUpdate](UserUpdate.md) |  | |
+| **userUpdate** | **UserUpdate**|  | |
+
 
 ### Return type
 
-[**UserRead**](UserRead.md)
+**UserRead**
 
 ### Authorization
 
@@ -417,15 +305,15 @@ example().catch(console.error);
 
 ### HTTP request headers
 
-- **Content-Type**: `application/json`
-- **Accept**: `application/json`
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Successful Response |  -  |
-| **422** | Validation Error |  -  |
+|**200** | Successful Response |  -  |
+|**422** | Validation Error |  -  |
 
-[[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

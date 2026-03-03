@@ -2,70 +2,50 @@
 
 All URIs are relative to *http://localhost*
 
-| Method | HTTP request | Description |
+|Method | HTTP request | Description|
 |------------- | ------------- | -------------|
-| [**getMessagesApiV1ConversationsConversationIdMessagesGet**](MessagesApi.md#getmessagesapiv1conversationsconversationidmessagesget) | **GET** /api/v1/conversations/{conversation_id}/messages | Get Messages |
-| [**markAsReadApiV1MessagesMessageIdReadPatch**](MessagesApi.md#markasreadapiv1messagesmessageidreadpatch) | **PATCH** /api/v1/messages/{message_id}/read | Mark As Read |
-| [**sendMessageApiV1ConversationsConversationIdMessagesPost**](MessagesApi.md#sendmessageapiv1conversationsconversationidmessagespost) | **POST** /api/v1/conversations/{conversation_id}/messages | Send Message |
+|[**getMessagesApiV1ConversationsConversationIdMessagesGet**](#getmessagesapiv1conversationsconversationidmessagesget) | **GET** /api/v1/conversations/{conversation_id}/messages | Get Messages|
+|[**markAsReadApiV1MessagesMessageIdReadPatch**](#markasreadapiv1messagesmessageidreadpatch) | **PATCH** /api/v1/messages/{message_id}/read | Mark As Read|
+|[**sendMessageApiV1ConversationsConversationIdMessagesPost**](#sendmessageapiv1conversationsconversationidmessagespost) | **POST** /api/v1/conversations/{conversation_id}/messages | Send Message|
 
+# **getMessagesApiV1ConversationsConversationIdMessagesGet**
+> PaginatedMessages getMessagesApiV1ConversationsConversationIdMessagesGet()
 
-
-## getMessagesApiV1ConversationsConversationIdMessagesGet
-
-> PaginatedMessages getMessagesApiV1ConversationsConversationIdMessagesGet(conversationId, cursor, limit)
-
-Get Messages
 
 ### Example
 
-```ts
+```typescript
 import {
-  Configuration,
-  MessagesApi,
+    MessagesApi,
+    Configuration
 } from '@bianlat/api-client';
-import type { GetMessagesApiV1ConversationsConversationIdMessagesGetRequest } from '@bianlat/api-client';
 
-async function example() {
-  console.log("🚀 Testing @bianlat/api-client SDK...");
-  const config = new Configuration({ 
-    // Configure HTTP bearer authorization: HTTPBearer
-    accessToken: "YOUR BEARER TOKEN",
-  });
-  const api = new MessagesApi(config);
+const configuration = new Configuration();
+const apiInstance = new MessagesApi(configuration);
 
-  const body = {
-    // string
-    conversationId: 38400000-8cf0-11bd-b23e-10b96e4ef00d,
-    // string (optional)
-    cursor: 38400000-8cf0-11bd-b23e-10b96e4ef00d,
-    // number (optional)
-    limit: 56,
-  } satisfies GetMessagesApiV1ConversationsConversationIdMessagesGetRequest;
+let conversationId: string; // (default to undefined)
+let cursor: string; // (optional) (default to undefined)
+let limit: number; // (optional) (default to 30)
 
-  try {
-    const data = await api.getMessagesApiV1ConversationsConversationIdMessagesGet(body);
-    console.log(data);
-  } catch (error) {
-    console.error(error);
-  }
-}
-
-// Run the test
-example().catch(console.error);
+const { status, data } = await apiInstance.getMessagesApiV1ConversationsConversationIdMessagesGet(
+    conversationId,
+    cursor,
+    limit
+);
 ```
 
 ### Parameters
 
-
-| Name | Type | Description  | Notes |
+|Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **conversationId** | `string` |  | [Defaults to `undefined`] |
-| **cursor** | `string` |  | [Optional] [Defaults to `undefined`] |
-| **limit** | `number` |  | [Optional] [Defaults to `30`] |
+| **conversationId** | [**string**] |  | defaults to undefined|
+| **cursor** | [**string**] |  | (optional) defaults to undefined|
+| **limit** | [**number**] |  | (optional) defaults to 30|
+
 
 ### Return type
 
-[**PaginatedMessages**](PaginatedMessages.md)
+**PaginatedMessages**
 
 ### Authorization
 
@@ -73,69 +53,50 @@ example().catch(console.error);
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: `application/json`
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
 
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Successful Response |  -  |
-| **422** | Validation Error |  -  |
+|**200** | Successful Response |  -  |
+|**422** | Validation Error |  -  |
 
-[[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **markAsReadApiV1MessagesMessageIdReadPatch**
+> markAsReadApiV1MessagesMessageIdReadPatch()
 
-## markAsReadApiV1MessagesMessageIdReadPatch
-
-> markAsReadApiV1MessagesMessageIdReadPatch(messageId)
-
-Mark As Read
 
 ### Example
 
-```ts
+```typescript
 import {
-  Configuration,
-  MessagesApi,
+    MessagesApi,
+    Configuration
 } from '@bianlat/api-client';
-import type { MarkAsReadApiV1MessagesMessageIdReadPatchRequest } from '@bianlat/api-client';
 
-async function example() {
-  console.log("🚀 Testing @bianlat/api-client SDK...");
-  const config = new Configuration({ 
-    // Configure HTTP bearer authorization: HTTPBearer
-    accessToken: "YOUR BEARER TOKEN",
-  });
-  const api = new MessagesApi(config);
+const configuration = new Configuration();
+const apiInstance = new MessagesApi(configuration);
 
-  const body = {
-    // string
-    messageId: 38400000-8cf0-11bd-b23e-10b96e4ef00d,
-  } satisfies MarkAsReadApiV1MessagesMessageIdReadPatchRequest;
+let messageId: string; // (default to undefined)
 
-  try {
-    const data = await api.markAsReadApiV1MessagesMessageIdReadPatch(body);
-    console.log(data);
-  } catch (error) {
-    console.error(error);
-  }
-}
-
-// Run the test
-example().catch(console.error);
+const { status, data } = await apiInstance.markAsReadApiV1MessagesMessageIdReadPatch(
+    messageId
+);
 ```
 
 ### Parameters
 
-
-| Name | Type | Description  | Notes |
+|Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **messageId** | `string` |  | [Defaults to `undefined`] |
+| **messageId** | [**string**] |  | defaults to undefined|
+
 
 ### Return type
 
-`void` (Empty response body)
+void (empty response body)
 
 ### Authorization
 
@@ -143,72 +104,54 @@ example().catch(console.error);
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: `application/json`
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
 
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **204** | Successful Response |  -  |
-| **422** | Validation Error |  -  |
+|**204** | Successful Response |  -  |
+|**422** | Validation Error |  -  |
 
-[[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **sendMessageApiV1ConversationsConversationIdMessagesPost**
+> MessageRead sendMessageApiV1ConversationsConversationIdMessagesPost(sendMessageRequest)
 
-## sendMessageApiV1ConversationsConversationIdMessagesPost
-
-> MessageRead sendMessageApiV1ConversationsConversationIdMessagesPost(conversationId, sendMessageRequest)
-
-Send Message
 
 ### Example
 
-```ts
+```typescript
 import {
-  Configuration,
-  MessagesApi,
+    MessagesApi,
+    Configuration,
+    SendMessageRequest
 } from '@bianlat/api-client';
-import type { SendMessageApiV1ConversationsConversationIdMessagesPostRequest } from '@bianlat/api-client';
 
-async function example() {
-  console.log("🚀 Testing @bianlat/api-client SDK...");
-  const config = new Configuration({ 
-    // Configure HTTP bearer authorization: HTTPBearer
-    accessToken: "YOUR BEARER TOKEN",
-  });
-  const api = new MessagesApi(config);
+const configuration = new Configuration();
+const apiInstance = new MessagesApi(configuration);
 
-  const body = {
-    // string
-    conversationId: 38400000-8cf0-11bd-b23e-10b96e4ef00d,
-    // SendMessageRequest
-    sendMessageRequest: ...,
-  } satisfies SendMessageApiV1ConversationsConversationIdMessagesPostRequest;
+let conversationId: string; // (default to undefined)
+let sendMessageRequest: SendMessageRequest; //
 
-  try {
-    const data = await api.sendMessageApiV1ConversationsConversationIdMessagesPost(body);
-    console.log(data);
-  } catch (error) {
-    console.error(error);
-  }
-}
-
-// Run the test
-example().catch(console.error);
+const { status, data } = await apiInstance.sendMessageApiV1ConversationsConversationIdMessagesPost(
+    conversationId,
+    sendMessageRequest
+);
 ```
 
 ### Parameters
 
-
-| Name | Type | Description  | Notes |
+|Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **conversationId** | `string` |  | [Defaults to `undefined`] |
-| **sendMessageRequest** | [SendMessageRequest](SendMessageRequest.md) |  | |
+| **sendMessageRequest** | **SendMessageRequest**|  | |
+| **conversationId** | [**string**] |  | defaults to undefined|
+
 
 ### Return type
 
-[**MessageRead**](MessageRead.md)
+**MessageRead**
 
 ### Authorization
 
@@ -216,15 +159,15 @@ example().catch(console.error);
 
 ### HTTP request headers
 
-- **Content-Type**: `application/json`
-- **Accept**: `application/json`
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **201** | Successful Response |  -  |
-| **422** | Validation Error |  -  |
+|**201** | Successful Response |  -  |
+|**422** | Validation Error |  -  |
 
-[[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

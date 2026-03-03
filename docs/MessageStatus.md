@@ -1,32 +1,14 @@
-
 # MessageStatus
 
 
-## Properties
+## Enum
 
-Name | Type
------------- | -------------
+* `Sent` (value: `'sent'`)
 
-## Example
+* `Delivered` (value: `'delivered'`)
 
-```typescript
-import type { MessageStatus } from '@bianlat/api-client'
+* `Read` (value: `'read'`)
 
-// TODO: Update the object below with actual values
-const example = {
-} satisfies MessageStatus
+* `UnknownDefaultOpenApi` (value: `'11184809'`)
 
-console.log(example)
-
-// Convert the instance to a JSON string
-const exampleJSON: string = JSON.stringify(example)
-console.log(exampleJSON)
-
-// Parse the JSON string back to an object
-const exampleParsed = JSON.parse(exampleJSON) as MessageStatus
-console.log(exampleParsed)
-```
-
-[[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
-
-
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

@@ -2,61 +2,46 @@
 
 All URIs are relative to *http://localhost*
 
-| Method | HTTP request | Description |
+|Method | HTTP request | Description|
 |------------- | ------------- | -------------|
-| [**loginApiV1AuthLoginPost**](AuthApi.md#loginapiv1authloginpost) | **POST** /api/v1/auth/login | Login |
-| [**logoutApiV1AuthLogoutPost**](AuthApi.md#logoutapiv1authlogoutpost) | **POST** /api/v1/auth/logout | Logout |
-| [**refreshApiV1AuthRefreshPost**](AuthApi.md#refreshapiv1authrefreshpost) | **POST** /api/v1/auth/refresh | Refresh |
-| [**verifyApiV1AuthVerifyPost**](AuthApi.md#verifyapiv1authverifypost) | **POST** /api/v1/auth/verify | Verify |
+|[**loginApiV1AuthLoginPost**](#loginapiv1authloginpost) | **POST** /api/v1/auth/login | Login|
+|[**logoutApiV1AuthLogoutPost**](#logoutapiv1authlogoutpost) | **POST** /api/v1/auth/logout | Logout|
+|[**refreshApiV1AuthRefreshPost**](#refreshapiv1authrefreshpost) | **POST** /api/v1/auth/refresh | Refresh|
+|[**verifyApiV1AuthVerifyPost**](#verifyapiv1authverifypost) | **POST** /api/v1/auth/verify | Verify|
 
-
-
-## loginApiV1AuthLoginPost
-
+# **loginApiV1AuthLoginPost**
 > loginApiV1AuthLoginPost(loginRequest)
 
-Login
 
 ### Example
 
-```ts
+```typescript
 import {
-  Configuration,
-  AuthApi,
+    AuthApi,
+    Configuration,
+    LoginRequest
 } from '@bianlat/api-client';
-import type { LoginApiV1AuthLoginPostRequest } from '@bianlat/api-client';
 
-async function example() {
-  console.log("🚀 Testing @bianlat/api-client SDK...");
-  const api = new AuthApi();
+const configuration = new Configuration();
+const apiInstance = new AuthApi(configuration);
 
-  const body = {
-    // LoginRequest
-    loginRequest: ...,
-  } satisfies LoginApiV1AuthLoginPostRequest;
+let loginRequest: LoginRequest; //
 
-  try {
-    const data = await api.loginApiV1AuthLoginPost(body);
-    console.log(data);
-  } catch (error) {
-    console.error(error);
-  }
-}
-
-// Run the test
-example().catch(console.error);
+const { status, data } = await apiInstance.loginApiV1AuthLoginPost(
+    loginRequest
+);
 ```
 
 ### Parameters
 
-
-| Name | Type | Description  | Notes |
+|Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **loginRequest** | [LoginRequest](LoginRequest.md) |  | |
+| **loginRequest** | **LoginRequest**|  | |
+
 
 ### Return type
 
-`void` (Empty response body)
+void (empty response body)
 
 ### Authorization
 
@@ -64,69 +49,51 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: `application/json`
-- **Accept**: `application/json`
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **204** | Successful Response |  -  |
-| **422** | Validation Error |  -  |
+|**204** | Successful Response |  -  |
+|**422** | Validation Error |  -  |
 
-[[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-
-## logoutApiV1AuthLogoutPost
-
+# **logoutApiV1AuthLogoutPost**
 > logoutApiV1AuthLogoutPost(refreshRequest)
 
-Logout
 
 ### Example
 
-```ts
+```typescript
 import {
-  Configuration,
-  AuthApi,
+    AuthApi,
+    Configuration,
+    RefreshRequest
 } from '@bianlat/api-client';
-import type { LogoutApiV1AuthLogoutPostRequest } from '@bianlat/api-client';
 
-async function example() {
-  console.log("🚀 Testing @bianlat/api-client SDK...");
-  const config = new Configuration({ 
-    // Configure HTTP bearer authorization: HTTPBearer
-    accessToken: "YOUR BEARER TOKEN",
-  });
-  const api = new AuthApi(config);
+const configuration = new Configuration();
+const apiInstance = new AuthApi(configuration);
 
-  const body = {
-    // RefreshRequest
-    refreshRequest: ...,
-  } satisfies LogoutApiV1AuthLogoutPostRequest;
+let refreshRequest: RefreshRequest; //
 
-  try {
-    const data = await api.logoutApiV1AuthLogoutPost(body);
-    console.log(data);
-  } catch (error) {
-    console.error(error);
-  }
-}
-
-// Run the test
-example().catch(console.error);
+const { status, data } = await apiInstance.logoutApiV1AuthLogoutPost(
+    refreshRequest
+);
 ```
 
 ### Parameters
 
-
-| Name | Type | Description  | Notes |
+|Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **refreshRequest** | [RefreshRequest](RefreshRequest.md) |  | |
+| **refreshRequest** | **RefreshRequest**|  | |
+
 
 ### Return type
 
-`void` (Empty response body)
+void (empty response body)
 
 ### Authorization
 
@@ -134,65 +101,51 @@ example().catch(console.error);
 
 ### HTTP request headers
 
-- **Content-Type**: `application/json`
-- **Accept**: `application/json`
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **204** | Successful Response |  -  |
-| **422** | Validation Error |  -  |
+|**204** | Successful Response |  -  |
+|**422** | Validation Error |  -  |
 
-[[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-
-## refreshApiV1AuthRefreshPost
-
+# **refreshApiV1AuthRefreshPost**
 > TokenResponse refreshApiV1AuthRefreshPost(refreshRequest)
 
-Refresh
 
 ### Example
 
-```ts
+```typescript
 import {
-  Configuration,
-  AuthApi,
+    AuthApi,
+    Configuration,
+    RefreshRequest
 } from '@bianlat/api-client';
-import type { RefreshApiV1AuthRefreshPostRequest } from '@bianlat/api-client';
 
-async function example() {
-  console.log("🚀 Testing @bianlat/api-client SDK...");
-  const api = new AuthApi();
+const configuration = new Configuration();
+const apiInstance = new AuthApi(configuration);
 
-  const body = {
-    // RefreshRequest
-    refreshRequest: ...,
-  } satisfies RefreshApiV1AuthRefreshPostRequest;
+let refreshRequest: RefreshRequest; //
 
-  try {
-    const data = await api.refreshApiV1AuthRefreshPost(body);
-    console.log(data);
-  } catch (error) {
-    console.error(error);
-  }
-}
-
-// Run the test
-example().catch(console.error);
+const { status, data } = await apiInstance.refreshApiV1AuthRefreshPost(
+    refreshRequest
+);
 ```
 
 ### Parameters
 
-
-| Name | Type | Description  | Notes |
+|Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **refreshRequest** | [RefreshRequest](RefreshRequest.md) |  | |
+| **refreshRequest** | **RefreshRequest**|  | |
+
 
 ### Return type
 
-[**TokenResponse**](TokenResponse.md)
+**TokenResponse**
 
 ### Authorization
 
@@ -200,65 +153,51 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: `application/json`
-- **Accept**: `application/json`
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Successful Response |  -  |
-| **422** | Validation Error |  -  |
+|**200** | Successful Response |  -  |
+|**422** | Validation Error |  -  |
 
-[[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-
-## verifyApiV1AuthVerifyPost
-
+# **verifyApiV1AuthVerifyPost**
 > TokenResponse verifyApiV1AuthVerifyPost(verifyRequest)
 
-Verify
 
 ### Example
 
-```ts
+```typescript
 import {
-  Configuration,
-  AuthApi,
+    AuthApi,
+    Configuration,
+    VerifyRequest
 } from '@bianlat/api-client';
-import type { VerifyApiV1AuthVerifyPostRequest } from '@bianlat/api-client';
 
-async function example() {
-  console.log("🚀 Testing @bianlat/api-client SDK...");
-  const api = new AuthApi();
+const configuration = new Configuration();
+const apiInstance = new AuthApi(configuration);
 
-  const body = {
-    // VerifyRequest
-    verifyRequest: ...,
-  } satisfies VerifyApiV1AuthVerifyPostRequest;
+let verifyRequest: VerifyRequest; //
 
-  try {
-    const data = await api.verifyApiV1AuthVerifyPost(body);
-    console.log(data);
-  } catch (error) {
-    console.error(error);
-  }
-}
-
-// Run the test
-example().catch(console.error);
+const { status, data } = await apiInstance.verifyApiV1AuthVerifyPost(
+    verifyRequest
+);
 ```
 
 ### Parameters
 
-
-| Name | Type | Description  | Notes |
+|Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **verifyRequest** | [VerifyRequest](VerifyRequest.md) |  | |
+| **verifyRequest** | **VerifyRequest**|  | |
+
 
 ### Return type
 
-[**TokenResponse**](TokenResponse.md)
+**TokenResponse**
 
 ### Authorization
 
@@ -266,15 +205,15 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: `application/json`
-- **Accept**: `application/json`
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Successful Response |  -  |
-| **422** | Validation Error |  -  |
+|**200** | Successful Response |  -  |
+|**422** | Validation Error |  -  |
 
-[[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

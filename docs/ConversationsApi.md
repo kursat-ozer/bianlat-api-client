@@ -2,65 +2,46 @@
 
 All URIs are relative to *http://localhost*
 
-| Method | HTTP request | Description |
+|Method | HTTP request | Description|
 |------------- | ------------- | -------------|
-| [**createConversationApiV1ConversationsPost**](ConversationsApi.md#createconversationapiv1conversationspost) | **POST** /api/v1/conversations | Create Conversation |
-| [**deleteConversationApiV1ConversationsConversationIdDelete**](ConversationsApi.md#deleteconversationapiv1conversationsconversationiddelete) | **DELETE** /api/v1/conversations/{conversation_id} | Delete Conversation |
-| [**getConversationApiV1ConversationsConversationIdGet**](ConversationsApi.md#getconversationapiv1conversationsconversationidget) | **GET** /api/v1/conversations/{conversation_id} | Get Conversation |
-| [**listConversationsApiV1ConversationsGet**](ConversationsApi.md#listconversationsapiv1conversationsget) | **GET** /api/v1/conversations | List Conversations |
+|[**createConversationApiV1ConversationsPost**](#createconversationapiv1conversationspost) | **POST** /api/v1/conversations | Create Conversation|
+|[**deleteConversationApiV1ConversationsConversationIdDelete**](#deleteconversationapiv1conversationsconversationiddelete) | **DELETE** /api/v1/conversations/{conversation_id} | Delete Conversation|
+|[**getConversationApiV1ConversationsConversationIdGet**](#getconversationapiv1conversationsconversationidget) | **GET** /api/v1/conversations/{conversation_id} | Get Conversation|
+|[**listConversationsApiV1ConversationsGet**](#listconversationsapiv1conversationsget) | **GET** /api/v1/conversations | List Conversations|
 
-
-
-## createConversationApiV1ConversationsPost
-
+# **createConversationApiV1ConversationsPost**
 > ConversationRead createConversationApiV1ConversationsPost(conversationCreate)
 
-Create Conversation
 
 ### Example
 
-```ts
+```typescript
 import {
-  Configuration,
-  ConversationsApi,
+    ConversationsApi,
+    Configuration,
+    ConversationCreate
 } from '@bianlat/api-client';
-import type { CreateConversationApiV1ConversationsPostRequest } from '@bianlat/api-client';
 
-async function example() {
-  console.log("🚀 Testing @bianlat/api-client SDK...");
-  const config = new Configuration({ 
-    // Configure HTTP bearer authorization: HTTPBearer
-    accessToken: "YOUR BEARER TOKEN",
-  });
-  const api = new ConversationsApi(config);
+const configuration = new Configuration();
+const apiInstance = new ConversationsApi(configuration);
 
-  const body = {
-    // ConversationCreate
-    conversationCreate: ...,
-  } satisfies CreateConversationApiV1ConversationsPostRequest;
+let conversationCreate: ConversationCreate; //
 
-  try {
-    const data = await api.createConversationApiV1ConversationsPost(body);
-    console.log(data);
-  } catch (error) {
-    console.error(error);
-  }
-}
-
-// Run the test
-example().catch(console.error);
+const { status, data } = await apiInstance.createConversationApiV1ConversationsPost(
+    conversationCreate
+);
 ```
 
 ### Parameters
 
-
-| Name | Type | Description  | Notes |
+|Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **conversationCreate** | [ConversationCreate](ConversationCreate.md) |  | |
+| **conversationCreate** | **ConversationCreate**|  | |
+
 
 ### Return type
 
-[**ConversationRead**](ConversationRead.md)
+**ConversationRead**
 
 ### Authorization
 
@@ -68,69 +49,50 @@ example().catch(console.error);
 
 ### HTTP request headers
 
-- **Content-Type**: `application/json`
-- **Accept**: `application/json`
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **201** | Successful Response |  -  |
-| **422** | Validation Error |  -  |
+|**201** | Successful Response |  -  |
+|**422** | Validation Error |  -  |
 
-[[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **deleteConversationApiV1ConversationsConversationIdDelete**
+> deleteConversationApiV1ConversationsConversationIdDelete()
 
-## deleteConversationApiV1ConversationsConversationIdDelete
-
-> deleteConversationApiV1ConversationsConversationIdDelete(conversationId)
-
-Delete Conversation
 
 ### Example
 
-```ts
+```typescript
 import {
-  Configuration,
-  ConversationsApi,
+    ConversationsApi,
+    Configuration
 } from '@bianlat/api-client';
-import type { DeleteConversationApiV1ConversationsConversationIdDeleteRequest } from '@bianlat/api-client';
 
-async function example() {
-  console.log("🚀 Testing @bianlat/api-client SDK...");
-  const config = new Configuration({ 
-    // Configure HTTP bearer authorization: HTTPBearer
-    accessToken: "YOUR BEARER TOKEN",
-  });
-  const api = new ConversationsApi(config);
+const configuration = new Configuration();
+const apiInstance = new ConversationsApi(configuration);
 
-  const body = {
-    // string
-    conversationId: 38400000-8cf0-11bd-b23e-10b96e4ef00d,
-  } satisfies DeleteConversationApiV1ConversationsConversationIdDeleteRequest;
+let conversationId: string; // (default to undefined)
 
-  try {
-    const data = await api.deleteConversationApiV1ConversationsConversationIdDelete(body);
-    console.log(data);
-  } catch (error) {
-    console.error(error);
-  }
-}
-
-// Run the test
-example().catch(console.error);
+const { status, data } = await apiInstance.deleteConversationApiV1ConversationsConversationIdDelete(
+    conversationId
+);
 ```
 
 ### Parameters
 
-
-| Name | Type | Description  | Notes |
+|Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **conversationId** | `string` |  | [Defaults to `undefined`] |
+| **conversationId** | [**string**] |  | defaults to undefined|
+
 
 ### Return type
 
-`void` (Empty response body)
+void (empty response body)
 
 ### Authorization
 
@@ -138,69 +100,50 @@ example().catch(console.error);
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: `application/json`
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
 
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **204** | Successful Response |  -  |
-| **422** | Validation Error |  -  |
+|**204** | Successful Response |  -  |
+|**422** | Validation Error |  -  |
 
-[[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **getConversationApiV1ConversationsConversationIdGet**
+> ConversationRead getConversationApiV1ConversationsConversationIdGet()
 
-## getConversationApiV1ConversationsConversationIdGet
-
-> ConversationRead getConversationApiV1ConversationsConversationIdGet(conversationId)
-
-Get Conversation
 
 ### Example
 
-```ts
+```typescript
 import {
-  Configuration,
-  ConversationsApi,
+    ConversationsApi,
+    Configuration
 } from '@bianlat/api-client';
-import type { GetConversationApiV1ConversationsConversationIdGetRequest } from '@bianlat/api-client';
 
-async function example() {
-  console.log("🚀 Testing @bianlat/api-client SDK...");
-  const config = new Configuration({ 
-    // Configure HTTP bearer authorization: HTTPBearer
-    accessToken: "YOUR BEARER TOKEN",
-  });
-  const api = new ConversationsApi(config);
+const configuration = new Configuration();
+const apiInstance = new ConversationsApi(configuration);
 
-  const body = {
-    // string
-    conversationId: 38400000-8cf0-11bd-b23e-10b96e4ef00d,
-  } satisfies GetConversationApiV1ConversationsConversationIdGetRequest;
+let conversationId: string; // (default to undefined)
 
-  try {
-    const data = await api.getConversationApiV1ConversationsConversationIdGet(body);
-    console.log(data);
-  } catch (error) {
-    console.error(error);
-  }
-}
-
-// Run the test
-example().catch(console.error);
+const { status, data } = await apiInstance.getConversationApiV1ConversationsConversationIdGet(
+    conversationId
+);
 ```
 
 ### Parameters
 
-
-| Name | Type | Description  | Notes |
+|Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **conversationId** | `string` |  | [Defaults to `undefined`] |
+| **conversationId** | [**string**] |  | defaults to undefined|
+
 
 ### Return type
 
-[**ConversationRead**](ConversationRead.md)
+**ConversationRead**
 
 ### Authorization
 
@@ -208,72 +151,53 @@ example().catch(console.error);
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: `application/json`
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
 
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Successful Response |  -  |
-| **422** | Validation Error |  -  |
+|**200** | Successful Response |  -  |
+|**422** | Validation Error |  -  |
 
-[[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **listConversationsApiV1ConversationsGet**
+> CursorPageConversationRead listConversationsApiV1ConversationsGet()
 
-## listConversationsApiV1ConversationsGet
-
-> CursorPageConversationRead listConversationsApiV1ConversationsGet(cursor, size)
-
-List Conversations
 
 ### Example
 
-```ts
+```typescript
 import {
-  Configuration,
-  ConversationsApi,
+    ConversationsApi,
+    Configuration
 } from '@bianlat/api-client';
-import type { ListConversationsApiV1ConversationsGetRequest } from '@bianlat/api-client';
 
-async function example() {
-  console.log("🚀 Testing @bianlat/api-client SDK...");
-  const config = new Configuration({ 
-    // Configure HTTP bearer authorization: HTTPBearer
-    accessToken: "YOUR BEARER TOKEN",
-  });
-  const api = new ConversationsApi(config);
+const configuration = new Configuration();
+const apiInstance = new ConversationsApi(configuration);
 
-  const body = {
-    // string | Cursor for the next page (optional)
-    cursor: cursor_example,
-    // number | Page size (optional)
-    size: 56,
-  } satisfies ListConversationsApiV1ConversationsGetRequest;
+let cursor: string; //Cursor for the next page (optional) (default to undefined)
+let size: number; //Page size (optional) (default to 50)
 
-  try {
-    const data = await api.listConversationsApiV1ConversationsGet(body);
-    console.log(data);
-  } catch (error) {
-    console.error(error);
-  }
-}
-
-// Run the test
-example().catch(console.error);
+const { status, data } = await apiInstance.listConversationsApiV1ConversationsGet(
+    cursor,
+    size
+);
 ```
 
 ### Parameters
 
-
-| Name | Type | Description  | Notes |
+|Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **cursor** | `string` | Cursor for the next page | [Optional] [Defaults to `undefined`] |
-| **size** | `number` | Page size | [Optional] [Defaults to `50`] |
+| **cursor** | [**string**] | Cursor for the next page | (optional) defaults to undefined|
+| **size** | [**number**] | Page size | (optional) defaults to 50|
+
 
 ### Return type
 
-[**CursorPageConversationRead**](CursorPageConversationRead.md)
+**CursorPageConversationRead**
 
 ### Authorization
 
@@ -281,15 +205,15 @@ example().catch(console.error);
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: `application/json`
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
 
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Successful Response |  -  |
-| **422** | Validation Error |  -  |
+|**200** | Successful Response |  -  |
+|**422** | Validation Error |  -  |
 
-[[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

@@ -1,46 +1,32 @@
-
 # LastMessageRead
 
 
 ## Properties
 
-Name | Type
------------- | -------------
-`id` | string
-`conversationId` | string
-`senderId` | string
-`messageType` | [MessageType](MessageType.md)
-`content` | string
-`status` | [MessageStatus](MessageStatus.md)
-`createdAt` | Date
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**id** | **string** |  | [default to undefined]
+**conversation_id** | **string** |  | [default to undefined]
+**sender_id** | **string** |  | [default to undefined]
+**message_type** | [**MessageType**](MessageType.md) |  | [default to undefined]
+**content** | **string** |  | [default to undefined]
+**status** | [**MessageStatus**](MessageStatus.md) |  | [default to undefined]
+**created_at** | **string** |  | [default to undefined]
 
 ## Example
 
 ```typescript
-import type { LastMessageRead } from '@bianlat/api-client'
+import { LastMessageRead } from '@bianlat/api-client';
 
-// TODO: Update the object below with actual values
-const example = {
-  "id": null,
-  "conversationId": null,
-  "senderId": null,
-  "messageType": null,
-  "content": null,
-  "status": null,
-  "createdAt": null,
-} satisfies LastMessageRead
-
-console.log(example)
-
-// Convert the instance to a JSON string
-const exampleJSON: string = JSON.stringify(example)
-console.log(exampleJSON)
-
-// Parse the JSON string back to an object
-const exampleParsed = JSON.parse(exampleJSON) as LastMessageRead
-console.log(exampleParsed)
+const instance: LastMessageRead = {
+    id,
+    conversation_id,
+    sender_id,
+    message_type,
+    content,
+    status,
+    created_at,
+};
 ```
 
-[[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
-
-
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

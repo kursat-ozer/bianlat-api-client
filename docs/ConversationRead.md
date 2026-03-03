@@ -1,50 +1,36 @@
-
 # ConversationRead
 
 
 ## Properties
 
-Name | Type
------------- | -------------
-`id` | string
-`type` | [ConversationType](ConversationType.md)
-`name` | string
-`avatar` | string
-`participants` | [Array&lt;ParticipantRead&gt;](ParticipantRead.md)
-`lastMessage` | [LastMessageRead](LastMessageRead.md)
-`unreadCount` | number
-`createdAt` | Date
-`updatedAt` | Date
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**id** | **string** |  | [default to undefined]
+**type** | [**ConversationType**](ConversationType.md) |  | [default to undefined]
+**name** | **string** |  | [default to undefined]
+**avatar** | **string** |  | [default to undefined]
+**participants** | [**Array&lt;ParticipantRead&gt;**](ParticipantRead.md) |  | [default to undefined]
+**last_message** | [**LastMessageRead**](LastMessageRead.md) |  | [default to undefined]
+**unread_count** | **number** |  | [default to undefined]
+**created_at** | **string** |  | [default to undefined]
+**updated_at** | **string** |  | [default to undefined]
 
 ## Example
 
 ```typescript
-import type { ConversationRead } from '@bianlat/api-client'
+import { ConversationRead } from '@bianlat/api-client';
 
-// TODO: Update the object below with actual values
-const example = {
-  "id": null,
-  "type": null,
-  "name": null,
-  "avatar": null,
-  "participants": null,
-  "lastMessage": null,
-  "unreadCount": null,
-  "createdAt": null,
-  "updatedAt": null,
-} satisfies ConversationRead
-
-console.log(example)
-
-// Convert the instance to a JSON string
-const exampleJSON: string = JSON.stringify(example)
-console.log(exampleJSON)
-
-// Parse the JSON string back to an object
-const exampleParsed = JSON.parse(exampleJSON) as ConversationRead
-console.log(exampleParsed)
+const instance: ConversationRead = {
+    id,
+    type,
+    name,
+    avatar,
+    participants,
+    last_message,
+    unread_count,
+    created_at,
+    updated_at,
+};
 ```
 
-[[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
-
-
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

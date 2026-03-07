@@ -13,14 +13,20 @@
  */
 
 
+// May contain unused imports in some cases
+// @ts-ignore
+import type { ContactRead } from './contact-read';
 
-
-export enum MessageStatus {
-    Sent = 'sent',
-    Delivered = 'delivered',
-    Read = 'read',
-    UnknownDefaultOpenApi = '11184809'
+export interface ContactAddResult {
+    'status': ContactAddResultStatusEnum;
+    'contact'?: ContactRead | null;
+    'phone'?: string | null;
 }
 
+export enum ContactAddResultStatusEnum {
+    Active = 'active',
+    Pending = 'pending',
+    UnknownDefaultOpenApi = '11184809'
+}
 
 

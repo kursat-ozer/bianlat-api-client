@@ -1,5 +1,7 @@
+export * from './contact-add-result';
 export * from './contact-create';
 export * from './contact-read';
+export * from './contact-update';
 export * from './conversation-create';
 export * from './conversation-read';
 export * from './conversation-type';

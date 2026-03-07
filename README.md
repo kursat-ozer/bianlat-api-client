@@ -1,4 +1,4 @@
-## @bianlat/api-client@0.0.4
+## @bianlat/api-client@0.1.0
 
 This generator creates TypeScript/JavaScript client that utilizes [axios](https://github.com/axios/axios). The generated Node module can be used in the following environments:
 
@@ -36,7 +36,7 @@ navigate to the folder of your consuming project and run one of the following co
 _published:_
 
 ```
-npm install @bianlat/api-client@0.0.4 --save
+npm install @bianlat/api-client@0.1.0 --save
 ```
 
 _unPublished (not recommended):_
@@ -67,14 +67,17 @@ Class | Method | HTTP request | Description
 *UsersApi* | [**getContactApiV1UsersContactsContactUserIdGet**](docs/UsersApi.md#getcontactapiv1userscontactscontactuseridget) | **GET** /api/v1/users/contacts/{contact_user_id} | Get Contact
 *UsersApi* | [**getMeApiV1UsersMeGet**](docs/UsersApi.md#getmeapiv1usersmeget) | **GET** /api/v1/users/me | Get Me
 *UsersApi* | [**listContactsApiV1UsersContactsGet**](docs/UsersApi.md#listcontactsapiv1userscontactsget) | **GET** /api/v1/users/contacts | List Contacts
-*UsersApi* | [**removeContactApiV1UsersContactsContactUserIdDelete**](docs/UsersApi.md#removecontactapiv1userscontactscontactuseriddelete) | **DELETE** /api/v1/users/contacts/{contact_user_id} | Remove Contact
+*UsersApi* | [**removeContactApiV1UsersContactsContactIdDelete**](docs/UsersApi.md#removecontactapiv1userscontactscontactiddelete) | **DELETE** /api/v1/users/contacts/{contact_id} | Remove Contact
+*UsersApi* | [**updateContactApiV1UsersContactsContactIdPatch**](docs/UsersApi.md#updatecontactapiv1userscontactscontactidpatch) | **PATCH** /api/v1/users/contacts/{contact_id} | Update Contact
 *UsersApi* | [**updateMeApiV1UsersMePatch**](docs/UsersApi.md#updatemeapiv1usersmepatch) | **PATCH** /api/v1/users/me | Update Me
 
 
 ### Documentation For Models
 
+ - [ContactAddResult](docs/ContactAddResult.md)
  - [ContactCreate](docs/ContactCreate.md)
  - [ContactRead](docs/ContactRead.md)
+ - [ContactUpdate](docs/ContactUpdate.md)
  - [ConversationCreate](docs/ConversationCreate.md)
  - [ConversationRead](docs/ConversationRead.md)
  - [ConversationType](docs/ConversationType.md)

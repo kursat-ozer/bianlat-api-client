@@ -12,8 +12,10 @@ base.ts
 common.ts
 configuration.ts
 docs/AuthApi.md
+docs/ContactAddResult.md
 docs/ContactCreate.md
 docs/ContactRead.md
+docs/ContactUpdate.md
 docs/ConversationCreate.md
 docs/ConversationRead.md
 docs/ConversationType.md
@@ -43,8 +45,10 @@ docs/ValidationError.md
 docs/VerifyRequest.md
 git_push.sh
 index.ts
+models/contact-add-result.ts
 models/contact-create.ts
 models/contact-read.ts
+models/contact-update.ts
 models/conversation-create.ts
 models/conversation-read.ts
 models/conversation-type.ts

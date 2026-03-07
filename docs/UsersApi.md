@@ -8,11 +8,12 @@ All URIs are relative to *http://localhost*
 |[**getContactApiV1UsersContactsContactUserIdGet**](#getcontactapiv1userscontactscontactuseridget) | **GET** /api/v1/users/contacts/{contact_user_id} | Get Contact|
 |[**getMeApiV1UsersMeGet**](#getmeapiv1usersmeget) | **GET** /api/v1/users/me | Get Me|
 |[**listContactsApiV1UsersContactsGet**](#listcontactsapiv1userscontactsget) | **GET** /api/v1/users/contacts | List Contacts|
-|[**removeContactApiV1UsersContactsContactUserIdDelete**](#removecontactapiv1userscontactscontactuseriddelete) | **DELETE** /api/v1/users/contacts/{contact_user_id} | Remove Contact|
+|[**removeContactApiV1UsersContactsContactIdDelete**](#removecontactapiv1userscontactscontactiddelete) | **DELETE** /api/v1/users/contacts/{contact_id} | Remove Contact|
+|[**updateContactApiV1UsersContactsContactIdPatch**](#updatecontactapiv1userscontactscontactidpatch) | **PATCH** /api/v1/users/contacts/{contact_id} | Update Contact|
 |[**updateMeApiV1UsersMePatch**](#updatemeapiv1usersmepatch) | **PATCH** /api/v1/users/me | Update Me|
 
 # **addContactApiV1UsersContactsPost**
-> ContactRead addContactApiV1UsersContactsPost(contactCreate)
+> ContactAddResult addContactApiV1UsersContactsPost(contactCreate)
 
 
 ### Example
@@ -43,7 +44,7 @@ const { status, data } = await apiInstance.addContactApiV1UsersContactsPost(
 
 ### Return type
 
-**ContactRead**
+**ContactAddResult**
 
 ### Authorization
 
@@ -173,11 +174,13 @@ const configuration = new Configuration();
 const apiInstance = new UsersApi(configuration);
 
 let q: string; // (optional) (default to undefined)
+let status: 'pending_registration'; // (optional) (default to undefined)
 let cursor: string; //Cursor for the next page (optional) (default to undefined)
 let size: number; //Page size (optional) (default to 50)
 
 const { status, data } = await apiInstance.listContactsApiV1UsersContactsGet(
     q,
+    status,
     cursor,
     size
 );
@@ -188,6 +191,7 @@ const { status, data } = await apiInstance.listContactsApiV1UsersContactsGet(
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **q** | [**string**] |  | (optional) defaults to undefined|
+| **status** | [**&#39;pending_registration&#39;**]**Array<&#39;pending_registration&#39; &#124; &#39;11184809&#39;>** |  | (optional) defaults to undefined|
 | **cursor** | [**string**] | Cursor for the next page | (optional) defaults to undefined|
 | **size** | [**number**] | Page size | (optional) defaults to 50|
 
@@ -214,8 +218,8 @@ const { status, data } = await apiInstance.listContactsApiV1UsersContactsGet(
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **removeContactApiV1UsersContactsContactUserIdDelete**
-> removeContactApiV1UsersContactsContactUserIdDelete()
+# **removeContactApiV1UsersContactsContactIdDelete**
+> removeContactApiV1UsersContactsContactIdDelete()
 
 
 ### Example
@@ -229,10 +233,10 @@ import {
 const configuration = new Configuration();
 const apiInstance = new UsersApi(configuration);
 
-let contactUserId: string; // (default to undefined)
+let contactId: string; // (default to undefined)
 
-const { status, data } = await apiInstance.removeContactApiV1UsersContactsContactUserIdDelete(
-    contactUserId
+const { status, data } = await apiInstance.removeContactApiV1UsersContactsContactIdDelete(
+    contactId
 );
 ```
 
@@ -240,7 +244,7 @@ const { status, data } = await apiInstance.removeContactApiV1UsersContactsContac
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **contactUserId** | [**string**] |  | defaults to undefined|
+| **contactId** | [**string**] |  | defaults to undefined|
 
 
 ### Return type
@@ -261,6 +265,61 @@ void (empty response body)
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 |**204** | Successful Response |  -  |
+|**422** | Validation Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **updateContactApiV1UsersContactsContactIdPatch**
+> ContactRead updateContactApiV1UsersContactsContactIdPatch(contactUpdate)
+
+
+### Example
+
+```typescript
+import {
+    UsersApi,
+    Configuration,
+    ContactUpdate
+} from '@bianlat/api-client';
+
+const configuration = new Configuration();
+const apiInstance = new UsersApi(configuration);
+
+let contactId: string; // (default to undefined)
+let contactUpdate: ContactUpdate; //
+
+const { status, data } = await apiInstance.updateContactApiV1UsersContactsContactIdPatch(
+    contactId,
+    contactUpdate
+);
+```
+
+### Parameters
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **contactUpdate** | **ContactUpdate**|  | |
+| **contactId** | [**string**] |  | defaults to undefined|
+
+
+### Return type
+
+**ContactRead**
+
+### Authorization
+
+[HTTPBearer](../README.md#HTTPBearer)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+|**200** | Successful Response |  -  |
 |**422** | Validation Error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

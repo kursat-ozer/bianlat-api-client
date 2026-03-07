@@ -6,6 +6,7 @@ All URIs are relative to *http://localhost*
 |------------- | ------------- | -------------|
 |[**getMessagesApiV1ConversationsConversationIdMessagesGet**](#getmessagesapiv1conversationsconversationidmessagesget) | **GET** /api/v1/conversations/{conversation_id}/messages | Get Messages|
 |[**markAsReadApiV1MessagesMessageIdReadPatch**](#markasreadapiv1messagesmessageidreadpatch) | **PATCH** /api/v1/messages/{message_id}/read | Mark As Read|
+|[**markConversationAsReadApiV1ConversationsConversationIdReadPatch**](#markconversationasreadapiv1conversationsconversationidreadpatch) | **PATCH** /api/v1/conversations/{conversation_id}/read | Mark Conversation As Read|
 |[**sendMessageApiV1ConversationsConversationIdMessagesPost**](#sendmessageapiv1conversationsconversationidmessagespost) | **POST** /api/v1/conversations/{conversation_id}/messages | Send Message|
 
 # **getMessagesApiV1ConversationsConversationIdMessagesGet**
@@ -92,6 +93,57 @@ const { status, data } = await apiInstance.markAsReadApiV1MessagesMessageIdReadP
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **messageId** | [**string**] |  | defaults to undefined|
+
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[HTTPBearer](../README.md#HTTPBearer)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+|**204** | Successful Response |  -  |
+|**422** | Validation Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **markConversationAsReadApiV1ConversationsConversationIdReadPatch**
+> markConversationAsReadApiV1ConversationsConversationIdReadPatch()
+
+
+### Example
+
+```typescript
+import {
+    MessagesApi,
+    Configuration
+} from '@bianlat/api-client';
+
+const configuration = new Configuration();
+const apiInstance = new MessagesApi(configuration);
+
+let conversationId: string; // (default to undefined)
+
+const { status, data } = await apiInstance.markConversationAsReadApiV1ConversationsConversationIdReadPatch(
+    conversationId
+);
+```
+
+### Parameters
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **conversationId** | [**string**] |  | defaults to undefined|
 
 
 ### Return type

@@ -1,4 +1,4 @@
-## @bianlat/api-client@0.1.1
+## @bianlat/api-client@0.1.2
 
 This generator creates TypeScript/JavaScript client that utilizes [axios](https://github.com/axios/axios). The generated Node module can be used in the following environments:
 
@@ -36,7 +36,7 @@ navigate to the folder of your consuming project and run one of the following co
 _published:_
 
 ```
-npm install @bianlat/api-client@0.1.1 --save
+npm install @bianlat/api-client@0.1.2 --save
 ```
 
 _unPublished (not recommended):_
@@ -62,6 +62,7 @@ Class | Method | HTTP request | Description
 *HealthApi* | [**healthHealthGet**](docs/HealthApi.md#healthhealthget) | **GET** /health | Health
 *MessagesApi* | [**getMessagesApiV1ConversationsConversationIdMessagesGet**](docs/MessagesApi.md#getmessagesapiv1conversationsconversationidmessagesget) | **GET** /api/v1/conversations/{conversation_id}/messages | Get Messages
 *MessagesApi* | [**markAsReadApiV1MessagesMessageIdReadPatch**](docs/MessagesApi.md#markasreadapiv1messagesmessageidreadpatch) | **PATCH** /api/v1/messages/{message_id}/read | Mark As Read
+*MessagesApi* | [**markConversationAsReadApiV1ConversationsConversationIdReadPatch**](docs/MessagesApi.md#markconversationasreadapiv1conversationsconversationidreadpatch) | **PATCH** /api/v1/conversations/{conversation_id}/read | Mark Conversation As Read
 *MessagesApi* | [**sendMessageApiV1ConversationsConversationIdMessagesPost**](docs/MessagesApi.md#sendmessageapiv1conversationsconversationidmessagespost) | **POST** /api/v1/conversations/{conversation_id}/messages | Send Message
 *UsersApi* | [**addContactApiV1UsersContactsPost**](docs/UsersApi.md#addcontactapiv1userscontactspost) | **POST** /api/v1/users/contacts | Add Contact
 *UsersApi* | [**getContactApiV1UsersContactsContactUserIdGet**](docs/UsersApi.md#getcontactapiv1userscontactscontactuseridget) | **GET** /api/v1/users/contacts/{contact_user_id} | Get Contact

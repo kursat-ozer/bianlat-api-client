@@ -6,6 +6,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **user_id** | **string** |  | [default to undefined]
+**full_name** | **string** |  | [default to undefined]
 **role** | [**ParticipantRole**](ParticipantRole.md) |  | [default to undefined]
 **unread_count** | **number** |  | [default to undefined]
 **joined_at** | **string** |  | [default to undefined]
@@ -17,6 +18,7 @@ import { ParticipantRead } from '@bianlat/api-client';
 
 const instance: ParticipantRead = {
     user_id,
+    full_name,
     role,
     unread_count,
     joined_at,

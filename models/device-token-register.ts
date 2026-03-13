@@ -14,8 +14,9 @@
 
 
 
-export interface SendMessageRequest {
-    'content': string;
-    'reply_to_id'?: string | null;
+export interface DeviceTokenRegister {
+    'token': string;
+    'device_id'?: string | null;
+    'platform'?: string | null;
 }
 

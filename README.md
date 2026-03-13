@@ -1,4 +1,4 @@
-## @bianlat/api-client@0.1.2
+## @bianlat/api-client@0.2.0
 
 This generator creates TypeScript/JavaScript client that utilizes [axios](https://github.com/axios/axios). The generated Node module can be used in the following environments:
 
@@ -36,7 +36,7 @@ navigate to the folder of your consuming project and run one of the following co
 _published:_
 
 ```
-npm install @bianlat/api-client@0.1.2 --save
+npm install @bianlat/api-client@0.2.0 --save
 ```
 
 _unPublished (not recommended):_
@@ -64,6 +64,8 @@ Class | Method | HTTP request | Description
 *MessagesApi* | [**markAsReadApiV1MessagesMessageIdReadPatch**](docs/MessagesApi.md#markasreadapiv1messagesmessageidreadpatch) | **PATCH** /api/v1/messages/{message_id}/read | Mark As Read
 *MessagesApi* | [**markConversationAsReadApiV1ConversationsConversationIdReadPatch**](docs/MessagesApi.md#markconversationasreadapiv1conversationsconversationidreadpatch) | **PATCH** /api/v1/conversations/{conversation_id}/read | Mark Conversation As Read
 *MessagesApi* | [**sendMessageApiV1ConversationsConversationIdMessagesPost**](docs/MessagesApi.md#sendmessageapiv1conversationsconversationidmessagespost) | **POST** /api/v1/conversations/{conversation_id}/messages | Send Message
+*NotificationsApi* | [**deleteDeviceTokenApiV1NotificationsDeviceTokensDelete**](docs/NotificationsApi.md#deletedevicetokenapiv1notificationsdevicetokensdelete) | **DELETE** /api/v1/notifications/device-tokens | Delete Device Token
+*NotificationsApi* | [**registerDeviceTokenApiV1NotificationsDeviceTokensPost**](docs/NotificationsApi.md#registerdevicetokenapiv1notificationsdevicetokenspost) | **POST** /api/v1/notifications/device-tokens | Register Device Token
 *UsersApi* | [**addContactApiV1UsersContactsPost**](docs/UsersApi.md#addcontactapiv1userscontactspost) | **POST** /api/v1/users/contacts | Add Contact
 *UsersApi* | [**getContactApiV1UsersContactsContactUserIdGet**](docs/UsersApi.md#getcontactapiv1userscontactscontactuseridget) | **GET** /api/v1/users/contacts/{contact_user_id} | Get Contact
 *UsersApi* | [**getMeApiV1UsersMeGet**](docs/UsersApi.md#getmeapiv1usersmeget) | **GET** /api/v1/users/me | Get Me
@@ -84,6 +86,8 @@ Class | Method | HTTP request | Description
  - [ConversationType](docs/ConversationType.md)
  - [CursorPageContactRead](docs/CursorPageContactRead.md)
  - [CursorPageConversationRead](docs/CursorPageConversationRead.md)
+ - [DeviceTokenDelete](docs/DeviceTokenDelete.md)
+ - [DeviceTokenRegister](docs/DeviceTokenRegister.md)
  - [HTTPValidationError](docs/HTTPValidationError.md)
  - [HealthResponse](docs/HealthResponse.md)
  - [LastMessageRead](docs/LastMessageRead.md)

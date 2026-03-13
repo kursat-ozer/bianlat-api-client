@@ -7,6 +7,7 @@ api/auth-api.ts
 api/conversations-api.ts
 api/health-api.ts
 api/messages-api.ts
+api/notifications-api.ts
 api/users-api.ts
 base.ts
 common.ts
@@ -22,6 +23,8 @@ docs/ConversationType.md
 docs/ConversationsApi.md
 docs/CursorPageContactRead.md
 docs/CursorPageConversationRead.md
+docs/DeviceTokenDelete.md
+docs/DeviceTokenRegister.md
 docs/HTTPValidationError.md
 docs/HealthApi.md
 docs/HealthResponse.md
@@ -32,6 +35,7 @@ docs/MessageRead.md
 docs/MessageStatus.md
 docs/MessageType.md
 docs/MessagesApi.md
+docs/NotificationsApi.md
 docs/PaginatedMessages.md
 docs/ParticipantRead.md
 docs/ParticipantRole.md
@@ -54,6 +58,8 @@ models/conversation-read.ts
 models/conversation-type.ts
 models/cursor-page-contact-read.ts
 models/cursor-page-conversation-read.ts
+models/device-token-delete.ts
+models/device-token-register.ts
 models/health-response.ts
 models/httpvalidation-error.ts
 models/index.ts

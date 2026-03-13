@@ -14,8 +14,7 @@
 
 
 
-export interface SendMessageRequest {
-    'content': string;
-    'reply_to_id'?: string | null;
+export interface DeviceTokenDelete {
+    'token': string;
 }
 

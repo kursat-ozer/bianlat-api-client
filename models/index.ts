@@ -7,6 +7,8 @@ export * from './conversation-read';
 export * from './conversation-type';
 export * from './cursor-page-contact-read';
 export * from './cursor-page-conversation-read';
+export * from './device-token-delete';
+export * from './device-token-register';
 export * from './httpvalidation-error';
 export * from './health-response';
 export * from './last-message-read';
